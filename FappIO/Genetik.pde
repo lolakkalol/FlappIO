@@ -53,7 +53,7 @@ Weight[] crossover() {
    }
    
     if (random(0, 1) < 0.001) {
-      mutation(); //<>//
+      mutation();
     }
    
    return offspring;

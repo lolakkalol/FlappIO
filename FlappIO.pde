@@ -8,7 +8,6 @@ brain brain = new brain();
 bird bird[];
 pipe p;
 background b[];
-PrintWriter output;
 int pipesPassed = 0;
 int generation = 1;
 
@@ -24,11 +23,6 @@ void setup() {
   
   setupNN(population);
   createNewNN();
-  
-  // Debugging & test area
-  output = createWriter("positions.txt");
-  
-  //
   
   // --- Setup related ---
   size(500, 500);
@@ -65,9 +59,6 @@ void draw() {
 
       float des = compute(new float[]{bird[i].pos.y, brain.obs[0].pos.y, brain.obs[0].pos.x}, i);
       clearNeurons();
-      //println(des);
-      //println(brain.obs[0].pos.x-bird[i].pos.x);
-      //println(des);
       
       if(des > 0.5)
         bird[i].jump();
@@ -100,15 +91,6 @@ text("Birds alive: " + nAlive, 10, 30);
 text("Pipes passed: " + pipesPassed, 10, 60);
 text("Generation: " + generation, 10, 480);
   
-}
-
-void keyPressed() {
-  //bird.jump();
-}
-
-void dispose() {
-  output.flush();
-  output.close();
 }
 
 void changeAppIcon(PImage img) {
