@@ -1,2 +1,3 @@
 # FlappIO
-Here is bla bla bla ...
+
+FappIO is a neural network that kind of learns to play the game "Flappy Bird"
